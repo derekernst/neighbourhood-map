@@ -1,0 +1,16 @@
+body {
+	display: flex;
+}
+
+#filter-container {
+	width: 15%;
+}
+
+#filter-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.filter-items {
+	margin-bottom: 5%;
+}

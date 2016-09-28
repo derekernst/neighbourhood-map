@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Neighbourhood Map</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+		<form id="filter-container">
+			<h3>Filter</h3>
+			<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. Park Dale">
+			<ul id="filter-list" data-bind="foreach: locationsList">
+				<li class="filter-items" data-bind="text: title, visible: visible"></li>
+			</ul>
+		</form>
+		<div id="map"></div>
+	</div>
+	<script src="lib/knockout-3.2.0.js"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>
