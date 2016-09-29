@@ -9,16 +9,17 @@
 </head>
 
 <body>
-		<form id="filter-container">
-			<h3>Filter</h3>
-			<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. Park Dale">
-			<ul id="filter-list" data-bind="foreach: locationsList">
-				<li class="filter-items" data-bind="text: title, visible: visible"></li>
-			</ul>
-		</form>
-		<div id="map"></div>
-	</div>
+	<section id="filter-container">
+		<h3>Filter</h3>
+		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. Park Dale">
+		<ul id="filter-list" data-bind="foreach: markers">
+			<li class="filter-items" data-bind="text: title, visible: visible"></li>
+		</ul>
+	</section>
+	<a href="#"></a>
+	<section id="map"></section>
 	<script src="lib/knockout-3.2.0.js"></script>
 	<script src="scripts.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PMW-ZjMRvLCXg-9ftg4FeTx9_TXCBbU&v=3&callback=initMap" onerror="mapsError()"></script>
 </body>
 </html>

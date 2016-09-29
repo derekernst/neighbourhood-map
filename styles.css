@@ -1,8 +1,17 @@
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0; }
+
 body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 	display: flex;
 }
 
 #filter-container {
+	padding: 1em;
 	width: 15%;
 }
 
@@ -14,3 +23,16 @@ body {
 .filter-items {
 	margin-bottom: 5%;
 }
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+.toggleView {
+	display: none;
+}
+
+$('#button').on('click', function() {
+	$('#filter-container').toggleClass('toggleView');
+	})
