@@ -12,7 +12,7 @@
 	<section id="filter-container">
 		<h3>Filter</h3>
 		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. Park Dale">
-		<ul id="filter-list" data-bind="foreach: markers">
+		<ul id="filter-list" data-bind="foreach: markersList">
 			<li class="filter-items" data-bind="text: title, visible: visible"></li>
 		</ul>
 	</section>
