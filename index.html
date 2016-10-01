@@ -13,11 +13,12 @@
 		<h3>Filter</h3>
 		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. Park Dale">
 		<ul id="filter-list" data-bind="foreach: markersList">
-			<li class="filter-items" data-bind="text: title, visible: visible"></li>
+			<li data-bind="text: title, click: $parent.setMarker, visible: visible, css: style"></li>
 		</ul>
 	</section>
 	<a href="#"></a>
 	<section id="map"></section>
+	<script src="lib/jquery-3.1.1.min.js"></script>
 	<script src="lib/knockout-3.2.0.js"></script>
 	<script src="scripts.js"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PMW-ZjMRvLCXg-9ftg4FeTx9_TXCBbU&v=3&callback=initMap" onerror="mapsError()"></script>

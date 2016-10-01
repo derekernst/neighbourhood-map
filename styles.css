@@ -20,19 +20,32 @@ body {
     padding-left: 0;
 }
 
-.filter-items {
-	margin-bottom: 5%;
+.filter-item {
+	margin-bottom: 5%;	
+	border-bottom:  solid;
+	border-width: 2px;
+	border-color: white;
+	padding: 2px;
+	cursor: pointer;
 }
+
+.active-marker { 
+	margin-bottom: 5%;	
+	border-bottom:  solid;
+	border-width: 2px;
+	border-color: green;
+	background-color: green;
+	color: white;
+	padding: 2px;
+	cursor: pointer;
+ }
+
+.filter-items:hover {
+	border-color: green;
+} 
+
 
 #map {
 	height: 100%;
 	width: 100%;
 }
-
-.toggleView {
-	display: none;
-}
-
-$('#button').on('click', function() {
-	$('#filter-container').toggleClass('toggleView');
-	})
