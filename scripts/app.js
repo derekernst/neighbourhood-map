@@ -70,9 +70,7 @@ var ListMarker = function (data) {
 
 var ViewModel = function() {
 	var self = this;
-
-	// var currentMarker = {};
-
+	
 	// store the map markersList
 	this.markers = [];
 	this.markersList = ko.observableArray([]);
@@ -151,20 +149,6 @@ var ViewModel = function() {
 			data: parameters,
 			cache: true,
 			dataType: 'jsonp',
-			// success: function(data) {
-			// 	// console.log(data);
-			// 	var id = data.businesses[0].id;
-			// 	var phone = data.businesses[0].phone;
-			// 	var rating = data.businesses[0].rating_img_url;
-			// 	var image = data.businesses[0].snippet_image_url;
-			// 	var text = data.businesses[0].snippet_text;
-
-			// 	windowContent = '<h3>' + marker.title + '</h3>';
-			// 	// <img src="' + image + '"><p>' +   
-			// 	// console.log(windowContent)
-			// 	infowindow.setContent(windowContent);
-			// 	infowindow.open(map, marker);
-			// },
 		}
 
 		// fire AJAX request 
@@ -200,76 +184,7 @@ var ViewModel = function() {
 				location.active(false);
 			}
 		});
-
-
     };
-
- //    var yelpAPI = function(marker, WindowContent) { 
-
- //    	// used https://github.com/bettiolo/oauth-signature-js for OAuth 
-	// 	var yelpURL = 'https://api.yelp.com/v2/search/';
-	// 	var key = 'u7heClePSCkpwI0d4iU6jw';
-	// 	var secret = 'fdb_OXwSA_yKk2B6SX_-OHuMuyg';
-	// 	var token = 'LWNzFew973kcJqQe9if8T_tZ7sPoeEvu';
-	// 	var secretToken = 'Hp7f-KHgZFzk_i2ESHXjdnGUFaA';
-
-	// 	var mLat = marker.position.lat;
-	// 	var mLng = marker.position.lng;
-
-	// 	// OAuth and search parameters
-	// 	var parameters = {
-	// 		oauth_consumer_key: key,
-	// 		oauth_token: token,
-	// 		oauth_nonce: Math.floor(Math.random() * 1e12).toString(),
-	// 		oauth_timestamp: Math.floor(Date.now()/1000),
-	// 		oauth_signature_method: 'HMAC-SHA1',
-	// 		oauth_version : '1.0',
-	// 		limit: 1,
-	// 		location: 'Toronto, ON',
-	// 		// ll: mLat + ',' + mLng,
-	// 		callback: 'cb'
-	// 	};
-
-	// 	var encodedSignature = oauthSignature.generate('GET',yelpURL, parameters, secret, secretToken);
-	// 	parameters.oauth_signature = encodedSignature;
-
-	// 	// Settings for AJAX reqeust
-	// 	var settings = {
-	// 		url: yelpURL,
-	// 		data: parameters,
-	// 		cache: true,
-	// 		dataType: 'jsonp',
-	// 		success: function(data) {
-	// 			// console.log(data);
-	// 			var id = data.businesses[0].id;
-	// 			var phone = data.businesses[0].phone;
-	// 			var rating = data.businesses[0].rating_img_url;
-	// 			var image = data.businesses[0].snippet_image_url;
-	// 			var text = data.businesses[0].snippet_text;
-
-	// 			windowContent = '<h3>' + id + '</h3>';
-	// 			// <img src="' + image + '"><p>' +   
-	// 			console.log(windowContent)
-	// 		},
-	// 		fail: function(e) { 
-	// 			windowContent = "Failed to load Yelp details!";
-	// 		}
-	// 	}
-
-	// 	// fire AJAX request 
-	// 	$.ajax(settings);
-	// }
-
- //    var activeListMarker = function (marker) { 
- //    	self.markersList().forEach(function(location) { 
-	// 		// update list marker based on clicked map marker
-	// 		if (location.id == marker.id) { 
-	// 			location.active(true);
-	// 		} else { 
-	// 			location.active(false);
-	// 		}
-	// 	});
- //    };
 
 	// filter markers
 	this.filter = ko.observable('');
@@ -317,6 +232,21 @@ var ViewModel = function() {
 			} 
 		});
 	}
+
+	$('#arrow').on('click', function() {
+		var arrow = $('#arrow');
+		var sidebar = $('#filter-container');
+		if (sidebar.hasClass('out')){
+			sidebar.fadeOut(500);
+			sidebar.removeClass('out');
+			arrow.addClass('arrowIn');
+		} else {
+			sidebar.fadeIn(500);
+			sidebar.addClass('out');
+			arrow.removeClass('arrowIn');
+		}
+	})
+
 }
 
 var initMap = function() {

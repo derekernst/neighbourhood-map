@@ -10,16 +10,18 @@
 </head>
 
 <body>
-	<section id="filter-container">
-		<button></button>
+	<section class="out" id="filter-container">
 		<h3 id="filter-title">Mexican Restaurants</h3>
 		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. El Catrin">
 		<ul id="filter-list" data-bind="foreach: markersList">
 			<li id="filter-item" data-bind="text: title, click: $parent.setMarker, visible: visible, css: style"></li>
 		</ul>
 	</section>
-	<a href="#"></a>
-	<section id="map"></section>
+	<div id="button">
+		<img class="arrowOut" id='arrow' src="./images/right-arrow.png">
+	</div>
+	<section id="map">
+	</section>
 	<script src="scripts/lib/jquery-3.1.1.min.js"></script>
 	<script src="scripts/lib/knockout-3.2.0.js"></script>
 	<script src="scripts/lib/oauth-signature.min.js"></script>
