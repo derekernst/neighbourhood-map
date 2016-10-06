@@ -1,0 +1,112 @@
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0; }
+
+body {
+	font-family: 'Oswald', sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+#filter-container {
+	padding: 1em;
+	width: 15%;
+}
+#filter-title {
+	color: green;
+	font-size: 2em;
+}
+
+#filter { 
+	height: 3%;
+	width: 98%;
+	margin-bottom: 3%;
+	font-size: 1em;
+}
+
+#filter-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#filter-item {
+	margin-bottom: 5%;	
+	border-bottom:  solid;
+	border-width: 2px;
+	border-color: white;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.active-marker { 
+	margin-bottom: 5%;	
+	border-bottom:  solid;
+	border-width: 2px;
+	border-color: green;
+	background-color: green;
+	color: white;
+	padding: 2px;
+	cursor: pointer;
+}
+
+#filter-item:hover {
+	border-color: green;
+} 
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+#info-title { 
+	color: green;
+}
+
+#info-img-text { 
+	display: flex;
+	margin-bottom: 3%;
+}
+
+#info-img-text #info-text {
+	margin: 0;
+	margin-left: 3%;
+	font: 2em;
+}
+
+#info-img-text #info-text #text-title{
+	margin: 0;
+}
+
+#info-rating-con { 
+	display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-direction: row;
+   	flex-direction: row;
+  	-webkit-justify-content: flex-end;
+  	justify-content: flex-end;
+}
+
+#info-rating-con #rating-img { 
+	height: 17px;
+	width: 84px;
+}
+
+#info-rating-con #reviews {
+	margin: 0;
+	margin-left: 3px;
+	margin-bottom: 3%;
+	width:auto;
+}
+
+#logo-con {
+	width:85%;
+}
+
+#logo {
+	height: 45px;
+	width: 80px;
+	float: right;
+}

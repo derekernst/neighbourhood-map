@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Neighbourhood Map</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body>
 	<section id="filter-container">
-		<h3>Filter</h3>
-		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. Park Dale">
+		<button></button>
+		<h3 id="filter-title">Mexican Restaurants</h3>
+		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. El Catrin">
 		<ul id="filter-list" data-bind="foreach: markersList">
-			<li data-bind="text: title, click: $parent.setMarker, visible: visible, css: style"></li>
+			<li id="filter-item" data-bind="text: title, click: $parent.setMarker, visible: visible, css: style"></li>
 		</ul>
 	</section>
 	<a href="#"></a>
 	<section id="map"></section>
-	<script src="lib/jquery-3.1.1.min.js"></script>
-	<script src="lib/knockout-3.2.0.js"></script>
-	<script src="scripts.js"></script>
+	<script src="scripts/lib/jquery-3.1.1.min.js"></script>
+	<script src="scripts/lib/knockout-3.2.0.js"></script>
+	<script src="scripts/lib/oauth-signature.min.js"></script>
+	<script src="scripts/app.js"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PMW-ZjMRvLCXg-9ftg4FeTx9_TXCBbU&v=3&callback=initMap" onerror="mapsError()"></script>
 </body>
 </html>
