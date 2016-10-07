@@ -13,9 +13,9 @@ body {
 
 #filter-container {
 	padding: 1em;
-	width: 15%;
 	position: relative;
 }
+
 #filter-title {
 	color: green;
 	font-size: 2em;
@@ -40,6 +40,7 @@ body {
 	border-color: white;
 	padding: 2px;
 	cursor: pointer;
+	font-size: 0.9em;
 }
 
 .active-marker { 
@@ -108,24 +109,35 @@ body {
 }
 
 #logo {
+	absolute: ;
 	height: 45px;
 	width: 80px;
 	float: right;
 }
 
+.navOut {
+	margin: 5px;
+	width: 30px;
+ }
+
+.navIn { 
+ 	margin: 0;
+	width: 30px;
+ }
+
 .arrowOut{ 
 	position: absolute;
 	top: 50%;
-	left: 15.1%;
 	width: 30px;
 	height: 30px;
 	z-index: 999;
 	cursor: pointer;
-	background: white;
+	/*background: white;*/
 	transform: rotate(180deg);
 }
 
 .arrowOut.arrowIn {
+	margin: 0;
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -135,4 +147,35 @@ body {
 	cursor: pointer;
 	background: white;
 	transform: rotate(0deg);
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+	#filter-container {
+		width: 90%;
+	}
+}
+
+    /* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	#filter-container {
+		width: 40%;
+	}
+
+	#filter-item {
+		font-size: 1.1em;
+	}
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	#filter-item {
+		font-size: 1.3em;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	#filter-container {
+		width: 20%;
+	}
 }

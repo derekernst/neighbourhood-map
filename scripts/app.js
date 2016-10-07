@@ -70,7 +70,7 @@ var ListMarker = function (data) {
 
 var ViewModel = function() {
 	var self = this;
-	
+
 	// store the map markersList
 	this.markers = [];
 	this.markersList = ko.observableArray([]);
@@ -136,7 +136,6 @@ var ViewModel = function() {
 			limit: 1,
 			term: marker.title,
 			location: 'Toronto, ON',
-			//ll: mLat + ',' + mLng,
 			callback: 'cb'
 		};
 
@@ -234,18 +233,24 @@ var ViewModel = function() {
 	}
 
 	$('#arrow').on('click', function() {
+		var sidenav = $('#nav');
 		var arrow = $('#arrow');
 		var sidebar = $('#filter-container');
 		if (sidebar.hasClass('out')){
 			sidebar.fadeOut(500);
 			sidebar.removeClass('out');
 			arrow.addClass('arrowIn');
+			sidenav.addClass('navIn')
 		} else {
 			sidebar.fadeIn(500);
 			sidebar.addClass('out');
 			arrow.removeClass('arrowIn');
+			sidenav.addClass('navOut');
 		}
-	})
+	google.maps.event.addListenerOnce(map, 'idle', function() {
+	   	google.maps.event.trigger(map, 'resize');
+	});
+	});
 
 }
 
