@@ -6,8 +6,7 @@ Map of Toronto with some of my favourite Mexican Restaurants! Click on a locatio
 
 1) Clone the Repository
 
-```https://github.com/derekernst/neighbourhood-map.git
-```
+        ```https://github.com/derekernst/neighbourhood-map.git```
 
 2) Open index.html in your browser	
 
