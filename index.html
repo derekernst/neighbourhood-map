@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Neighbourhood Map</title>
-	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
+    <title>Neighbourhood Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body>
-	<section class="out" id="filter-container">
-		<h3 id="filter-title">Mexican Restaurants</h3>
-		<input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. El Catrin">
-		<ul id="filter-list" data-bind="foreach: markersList">
-			<li id="filter-item" data-bind="text: title, click: $parent.setMarker, visible: visible, css: style"></li>
-		</ul>
-	</section>
-	<div class="navOut" id="nav">
-		<img class="arrowOut" id='arrow' src="./images/right-arrow.png">
-	</div>
-	<section id="map">
-	</section>
-	<script src="scripts/lib/jquery-3.1.1.min.js"></script>
-	<script src="scripts/lib/knockout-3.2.0.js"></script>
-	<script src="scripts/lib/oauth-signature.min.js"></script>
-	<script src="scripts/app.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PMW-ZjMRvLCXg-9ftg4FeTx9_TXCBbU&v=3&callback=initMap" onerror="mapsError()"></script>
+    <section class="out" id="filter-container">
+        <h3 id="filter-title">Mexican Restaurants</h3>
+        <input id="filter" type="text" data-bind="textInput: filter, event: {keyup: filterMarkers}" placeholder="e.g. El Catrin">
+        <ul id="filter-list" data-bind="foreach: markersList">
+            <li id="filter-item" data-bind="text: title, click: $parent.setMarker, visible: visible, css: style"></li>
+        </ul>
+    </section>
+    <div class="navOut" id="nav">
+        <img class="arrowOut" id='arrow' src="./images/right-arrow.png">
+    </div>
+    <section id="map">
+    </section>
+    <script src="scripts/lib/jquery-3.1.1.min.js"></script>
+    <script src="scripts/lib/knockout-3.2.0.js"></script>
+    <script src="scripts/lib/oauth-signature.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PMW-ZjMRvLCXg-9ftg4FeTx9_TXCBbU&v=3&callback=initMap" onerror="mapsError()"></script>
 </body>
+
 </html>
